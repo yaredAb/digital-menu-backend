@@ -14,16 +14,19 @@ function App() {
 
   return (
     <div className="page-wrapper">
-      <div class="logo-section">
-          <a className="logo">Akko <span>Coffee</span></a>
-          <h3 className="moto">ከአያቶቼ ምድር!</h3>
-      </div>
-      <div className="menu-section">
-        <div className="menu-list">
-          {menuItems.map(item => (
-            <MenuItem key={item.id} item={item} />
-          ))}
+      <a className="logo">Meskott</a>
+      <div className='filter-section'>
+        <input type='text' placeholder='search...' />
+        <div className='categories'>
+          <button>food</button>
+          <button>Drink</button>
         </div>
+      </div>
+
+      <div className="menu-list">
+        {menuItems.map(item => (
+          <MenuItem key={item.id} item={item} />
+        ))}
       </div>
     </div>
   );
