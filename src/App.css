@@ -30,10 +30,25 @@ input:focus{
   flex-direction: column;
   gap: 10px;
   padding: 10px;
-  border: 2px solid var(--secondary);
   width: 40%;
 }
 
+.logo{
+  font-size: 40px;
+  font-weight: 500;
+  font-style: italic;
+}
+.title{
+  font-size: 25px;
+}
+
+.main-section{
+  border: 2px solid var(--secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
 .filter-section{
   display: flex;
   justify-content: space-between;

@@ -15,18 +15,20 @@ function App() {
   return (
     <div className="page-wrapper">
       <a className="logo">Meskott</a>
-      <div className='filter-section'>
-        <input type='text' placeholder='search...' />
-        <div className='categories'>
-          <button>food</button>
-          <button>Drink</button>
+      <p className='title'>Menu</p>
+      <div className='main-section'>
+        <div className='filter-section'>
+          <input type='text' placeholder='search...' />
+          <div className='categories'>
+            <button>food</button>
+            <button>Drink</button>
+          </div>
         </div>
-      </div>
-
-      <div className="menu-list">
-        {menuItems.map(item => (
-          <MenuItem key={item.id} item={item} />
-        ))}
+        <div className="menu-list">
+          {menuItems.map(item => (
+            <MenuItem key={item.id} item={item} />
+          ))}
+        </div>
       </div>
     </div>
   );
