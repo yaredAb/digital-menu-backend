@@ -7,17 +7,19 @@ function MenuItem({ item }) {
   if (!item.visible) return null;
 
   return (
-    <div className="menu-item" onClick={() => setExpanded(!expanded)}>
-      <img src={item.image} alt={item.name} className="menu-image" />
-      <h3>{item.name}</h3>
+    <a href="#" class="menu-card" data-category="{{ $item->category }}">                       
 
-      {expanded && (
-        <div className="menu-details">
-          <p><strong>Description:</strong> {item.description}</p>
-          <p><strong>Ingredients:</strong> {item.ingredients}</p>
+        <div className='content'>
+            <div className='content-img'>
+                <img src={item.image} alt={item.name} />
+            </div>
+            <div class="content-txt">
+                <h3>{ item.name }</h3>
+                <p>{ item.ingredients }</p>
+            </div>
         </div>
-      )}
-    </div>
+        <span class="menu-price">{ item.price } Birr</span>
+    </a>
   );
 }
 
