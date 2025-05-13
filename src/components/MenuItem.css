@@ -29,6 +29,7 @@
 .content-txt h3{
     font-size: 20px;
     font-weight: 500;
+    color: var(--secondary);
 }
 .content-txt p{
     font-size: 16px;
