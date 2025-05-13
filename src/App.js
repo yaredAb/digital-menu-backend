@@ -31,9 +31,9 @@ function App() {
         <div className='filter-section'>
           <input type='text' placeholder='search...' />
           <div className='categories'>
-            <button onClick={() => selectedCategory('')}>All</button>
+            <button onClick={() => setSelectedCategory('')}>All</button>
             {categories.map(category => (
-              <button key={category.id} onClick={setSelectedCategory(category.name)}>{category.name}</button>
+              <button key={category.id} onClick={() => setSelectedCategory(category.name)}>{category.name}</button>
             ))}
           </div>
         </div>
