@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './MenuItem.css';
 
 function MenuItem({ item }) {
-  const [expanded, setExpanded] = useState(false);
 
   if (!item.visible) return null;
 
