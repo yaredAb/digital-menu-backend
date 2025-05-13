@@ -25,7 +25,7 @@
 .content-txt{
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
     padding: 10px;
 }
 .content-txt h3{
