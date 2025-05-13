@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import MenuItem from './components/MenuItem';
 import './App.css';
 
 function App() {
+  const [menuItems, setMenuItems] = useState([]);
+
+  useEffect(() => {
+    fetch('https://digital-menu-1-3i80.onrender.com/api/menu')
+      .then(res => res.json())
+      .then(data => setMenuItems(data))
+      .catch(err => console.error('Failed to fetch menu:', err));
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Our Menu</h1>
+      <div className="menu-list">
+        {menuItems.map(item => (
+          <MenuItem key={item.id} item={item} />
+        ))}
+      </div>
     </div>
   );
 }

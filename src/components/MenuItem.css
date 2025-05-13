@@ -1,0 +1,24 @@
+.menu-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 12px;
+    width: 300px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .menu-item:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .menu-image {
+    width: 100%;
+    border-radius: 4px;
+  }
+  
+  .menu-details {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
