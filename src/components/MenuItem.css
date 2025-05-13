@@ -1,0 +1,36 @@
+.menu-card{
+    background-color: var(--creamy);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 300px;
+}
+.menu-card img{
+    height: 200px;
+    object-fit: contain;
+    background-color: var(--primary);
+}
+.menu-price{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    background-color: var(--btn);
+    border-bottom: 40px;
+    color: var(--primary);
+    font-size: 20px;
+}
+.content-txt{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+}
+.content-txt h3{
+    font-size: 20px;
+    font-weight: 500;
+}
+.content-txt p{
+    font-size: 16px;
+    color: var(--secondary);
+}
