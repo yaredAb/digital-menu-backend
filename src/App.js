@@ -13,12 +13,17 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <h1>Our Menu</h1>
-      <div className="menu-list">
-        {menuItems.map(item => (
-          <MenuItem key={item.id} item={item} />
-        ))}
+    <div className="page-wrapper">
+      <div class="logo-section">
+          <a className="logo">Akko <span>Coffee</span></a>
+          <h3 className="moto">ከአያቶቼ ምድር!</h3>
+      </div>
+      <div className="menu-section">
+        <div className="menu-list">
+          {menuItems.map(item => (
+            <MenuItem key={item.id} item={item} />
+          ))}
+        </div>
       </div>
     </div>
   );
