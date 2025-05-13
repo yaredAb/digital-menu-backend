@@ -17,7 +17,7 @@ function App() {
       //fetch categories
       fetch('https://digital-menu-1-3i80.onrender.com/api/category')
         .then(res => res.json())
-        .then(data => setMenuItems(data))
+        .then(data => setCategories(data))
         .catch(err =>console.error('failed to fetch category', err))
   }, []);
 
