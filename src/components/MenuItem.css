@@ -4,6 +4,8 @@
     flex-direction: column;
     position: relative;
     height: 300px;
+    border-radius: 10px;
+    border: 1px solid var(--secondary);
 }
 .menu-card img{
     height: 200px;

@@ -13,7 +13,7 @@ function MenuItem({ item }) {
             <h3>{ item.name }</h3>
             <p>{ item.ingredients }</p>            
         </div>
-        <span className="menu-price">{ item.price } Birr</span>
+        <span className="menu-price">1200 Birr</span>
     </a>
   );
 }
