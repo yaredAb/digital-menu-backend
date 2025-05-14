@@ -42,10 +42,10 @@
 @media (max-width: 768px) {
     .menu-card{
         min-height: max-content;
-        max-height: 200px;
+        max-height: 250px;
     }
     .menu-card img{
-        height: 100px;
+        height: 150px;
     }
     .content-txt h3{
         font-weight: 18px;
