@@ -9,7 +9,7 @@ function AddMenuItem({ onItemAdded }) {
         price: '',
     })
 
-    const [imageFile, setImageFile] = useState(null)
+    
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
@@ -23,25 +23,10 @@ function AddMenuItem({ onItemAdded }) {
         setForm({...form, [e.target.name]: e.target.value})
     }
 
-    const handleImageChange = (e) => {
-        setImageFile(e.target.files[0])
-    }
-
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const payload = new FormData();
-
-        payload.append('name', form.name)
-        payload.append('description', form.description)
-        payload.append('ingredients', form.ingredients)
-        payload.append('price', form.price)
-        payload.append('category', form.category)
-
-        if(imageFile) {
-            payload.append('image', imageFile)
-        }
-
+        
         try {
             const response = await fetch('https://digital-menu-1-3i80.onrender.com/api/menu', {
                 method: 'POST',
