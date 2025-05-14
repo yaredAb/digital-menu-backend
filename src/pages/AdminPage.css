@@ -3,6 +3,10 @@
     margin: auto;
     padding: 2rem;
   }
+
+  .admin-form{
+    width: 30%;
+  }
   
   .admin-form input,
   .admin-form textarea,
@@ -33,4 +37,5 @@
   .admin-content{
     display: flex;
     gap: 20px;
+    width: 60%;
   }

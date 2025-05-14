@@ -39,6 +39,7 @@ input:focus{
   font-weight: 500;
   font-style: italic;
   text-align: center;
+  color: var(--secondary);
 }
 .title{
   font-size: 25px;
@@ -84,9 +85,6 @@ input:focus{
   padding: 10px;
   gap: 5px;
 }
-
-
-
 form {
   display: flex;
   flex-direction: column;
