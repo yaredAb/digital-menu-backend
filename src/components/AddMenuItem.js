@@ -15,7 +15,7 @@ function AddMenuItem({ onItemAdded }) {
 
     useEffect(() => {
         fetch('https://digital-menu-1-3i80.onrender.com/api/category')
-            .then(res => res.json)
+            .then(res => res.json())
             .then(data => setCategories(data))
             .catch(err => console.error("Faied to fetch categories", err))
     }, [])
@@ -36,7 +36,7 @@ function AddMenuItem({ onItemAdded }) {
         try {
             const response = await fetch('https://digital-menu-1-3i80.onrender.com/api/menu', {
                 method: 'POST',
-                header: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
             })
 
@@ -53,7 +53,7 @@ function AddMenuItem({ onItemAdded }) {
                     price: ''
                 })
             } else {
-                alert("Failed: ${result.message}")
+                alert(`Failed: ${result.message}`)
             }
         } catch (err) {
             console.error('Error submitting item', err)
