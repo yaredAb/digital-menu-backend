@@ -30,3 +30,7 @@
     background: #f4f4f4;
   }
   
+  .admin-content{
+    display: flex;
+    gap: 20px;
+  }

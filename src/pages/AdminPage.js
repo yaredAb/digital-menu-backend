@@ -89,52 +89,54 @@ function AdminPage() {
 
   return (
     <div className="admin-wrapper">
-      <h2>Admin Panel</h2>
+      <a href='/' className='logo'>Meskott</a>
+      <p className='title'>Admin Panel</p>
 
-      {/* Form */}
-      <form onSubmit={handleSubmit} className="admin-form">
-        <input name="name" placeholder="Name" value={form.name} onChange={handleChange} required />
-        <input name="image" placeholder="Image URL" value={form.image} onChange={handleChange} required />
-        <textarea name="description" placeholder="Description" value={form.description} onChange={handleChange} />
-        <input name="ingredients" placeholder="Ingredients (comma separated)" value={form.ingredients} onChange={handleChange} />
-        <select name="category" value={form.category} onChange={handleChange} required>
-          <option value="">Select Category</option>
-          {categories.map(cat => (
-            <option key={cat._id} value={cat.name}>{cat.name}</option>
-          ))}
-        </select>
-        <input name="price" placeholder="Price" type="number" value={form.price} onChange={handleChange} required />
-        <button type="submit">Add Item</button>
-      </form>
-
-      {/* Table */}
-      <table className="admin-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Ingredients</th>
-            <th>Price</th>
-            <th>Visible</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {menuItems.map(item => (
-            <tr key={item._id}>
-              <td>{item.name}</td>
-              <td>{item.ingredients?.join(', ')}</td>
-              <td>{item.price} Birr</td>
-              <td>{item.visible ? 'Yes' : 'No'}</td>
-              <td>
-                <button onClick={() => toggleVisibility(item._id)}>
-                  {item.visible ? 'Hide' : 'Show'}
-                </button>
-                <button onClick={() => deleteItem(item._id)} style={{ color: 'red' }}>Delete</button>
-              </td>
+      <div className="admin-content">
+        {/* Form */}
+        <form onSubmit={handleSubmit} className="admin-form">
+          <input name="name" placeholder="Name" value={form.name} onChange={handleChange} required />
+          <input name="image" placeholder="Image URL" value={form.image} onChange={handleChange} required />
+          <textarea name="description" placeholder="Description" value={form.description} onChange={handleChange} />
+          <input name="ingredients" placeholder="Ingredients (comma separated)" value={form.ingredients} onChange={handleChange} />
+          <select name="category" value={form.category} onChange={handleChange} required>
+            <option value="">Select Category</option>
+            {categories.map(cat => (
+              <option key={cat._id} value={cat.name}>{cat.name}</option>
+            ))}
+          </select>
+          <input name="price" placeholder="Price" type="number" value={form.price} onChange={handleChange} required />
+          <button type="submit">Add Item</button>
+        </form>
+        {/* Table */}
+        <table className="admin-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Ingredients</th>
+              <th>Price</th>
+              <th>Visible</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {menuItems.map(item => (
+              <tr key={item._id}>
+                <td>{item.name}</td>
+                <td>{item.ingredients?.join(', ')}</td>
+                <td>{item.price} Birr</td>
+                <td>{item.visible ? 'Yes' : 'No'}</td>
+                <td>
+                  <button onClick={() => toggleVisibility(item._id)}>
+                    {item.visible ? 'Hide' : 'Show'}
+                  </button>
+                  <button onClick={() => deleteItem(item._id)} style={{ color: 'red' }}>Delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
