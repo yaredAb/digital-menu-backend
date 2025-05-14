@@ -36,6 +36,7 @@ function AdminPage() {
 
   const handleImageChange = (e) => {
     setImageFile(e.target.files[0])
+    console.log('Selected file:', e.target.files[0]);
   }
 
   const handleSubmit = async (e) => {
@@ -51,6 +52,10 @@ function AdminPage() {
     if(imageFile) {
         payload.append('image', imageFile)
     }
+
+    for (let pair of payload.entries()) {
+      console.log(pair[0] + ':', pair[1]);
+    }    
 
 
     try {
@@ -102,7 +107,7 @@ function AdminPage() {
 
       <div className="admin-content">
         {/* Form */}
-        <form onSubmit={handleSubmit} className="admin-form">
+        <form onSubmit={handleSubmit} className="admin-form" encType='multipart/form-data'>
           <input name="name" placeholder="Name" value={form.name} onChange={handleChange} required />
           <input type="file" name="image" onChange={handleImageChange} required />
           <textarea name="description" placeholder="Description" value={form.description} onChange={handleChange} />
