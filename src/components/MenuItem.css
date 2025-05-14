@@ -6,6 +6,7 @@
     height: 300px;
     border-radius: 10px;
     border: 1px solid var(--secondary);
+    overflow: hidden;
 }
 .menu-card img{
     height: 200px;
@@ -36,4 +37,19 @@
 .content-txt p{
     font-size: 16px;
     color: var(--secondary);
+}
+
+@media (max-width: 768px) {
+    .menu-card{
+        flex-direction: row;
+        height: 200px;
+    }
+    .menu-card img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }

@@ -96,3 +96,29 @@ form input, form select, form textarea {
   padding: 8px;
   font-size: 1rem;
 }
+
+
+@media (max-width: 768px) {
+  #root{
+    align-items: start;
+  }
+  .page-wrapper{
+    width: 100%;
+  }
+  .main-section{
+    gap: 10px;
+    padding: 10px;
+  }
+  .filter-section{
+    flex-direction: column;
+    justify-content: start;
+    gap: 5px;
+  }
+  .filter-section input{
+    width: 100%;
+  }
+  .menu-list{
+    display: flex;
+    flex-direction: column;
+  }
+}
