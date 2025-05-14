@@ -3,14 +3,13 @@ import {useState, useEffect} from 'react'
 function AddMenuItem({ onItemAdded }) {
     const [form, setForm] = useState({
         name: '',
-        image: '',
         description: '',
         ingredients: '',
         category: '',
         price: '',
     })
 
-
+    const [imageFile, setImageFile] = useState(null)
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
@@ -24,20 +23,29 @@ function AddMenuItem({ onItemAdded }) {
         setForm({...form, [e.target.name]: e.target.value})
     }
 
+    const handleImageChange = (e) => {
+        setImageFile(e.target.files[0])
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const payload = {
-            ...form,
-            ingredients: form.ingredients.split(',').map(i => i.trim()),
-            price: parseFloat(form.price)
+        const payload = new FormData();
+
+        payload.append('name', form.name)
+        payload.append('description', form.description)
+        payload.append('ingredients', form.ingredients)
+        payload.append('price', form.price)
+        payload.append('category', form.category)
+
+        if(imageFile) {
+            payload.append('image', imageFile)
         }
 
         try {
             const response = await fetch('https://digital-menu-1-3i80.onrender.com/api/menu', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
+                body: payload
             })
 
             const result = await response.json()
@@ -46,12 +54,12 @@ function AddMenuItem({ onItemAdded }) {
                 onItemAdded(result)
                 setForm({
                     name: '',
-                    image: '',
                     description: '',
                     ingredients: '',
                     category: '',
                     price: ''
                 })
+                setImageFile(null)
             } else {
                 alert(`Failed: ${result.message}`)
             }
@@ -64,7 +72,7 @@ function AddMenuItem({ onItemAdded }) {
         <form onSubmit={handleSubmit} style={{ margin: '1rem 0' }}>
             <h3>Add Menu Item</h3>
             <input name="name" placeholder="Name" value={form.name} onChange={handleChange} required />
-            <input name="image" placeholder="Image URL" value={form.image} onChange={handleChange} required />
+            <input type="file" accept='image/' name="image" placeholder="Image URL" onChange={handleImageChange} required />
             <textarea name="description" placeholder="Description" value={form.description} onChange={handleChange} />
             <input name="ingredients" placeholder="Ingredients (comma separated)" value={form.ingredients} onChange={handleChange} />
             <select name="category" value={form.category} onChange={handleChange} required>
