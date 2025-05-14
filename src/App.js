@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import MenuItem from './components/MenuItem';
+import MenuPage from './pages/MenuPage';
+import AdminPage from './pages/AdminPage';
 import './App.css';
-import AddMenuItem from './components/AddMenuItem';
 
 function App() {
   return (
