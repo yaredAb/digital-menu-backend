@@ -1,6 +1,6 @@
 import React from 'react'
 import MenuItem from '../components/MenuItem'
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function MenuPage() {
 
