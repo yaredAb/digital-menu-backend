@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import MenuItem from './components/MenuItem';
 import './App.css';
+import AddMenuItem from './components/AddMenuItem';
 
 function App() {
   const [menuItems, setMenuItems] = useState([]);
@@ -37,6 +38,8 @@ function App() {
             ))}
           </div>
         </div>
+
+        <AddMenuItem onItemAdded={(newItem) => setMenuItems(prev => [...prev, newItem])} />
         <div className="menu-list">
           {filterMenuItems.map(item => (
             <MenuItem key={item.id} item={item} />
