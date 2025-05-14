@@ -30,7 +30,6 @@ export default function MenuPage() {
     <div className="page-wrapper">
       <a className="logo">Meskott</a>
       <p className='title'>Menu</p>
-      <a href="/admin" className="admin-link">Admin</a>
       <div className='main-section'>
         <div className='filter-section'>
           <input type='text' placeholder='search...' />
