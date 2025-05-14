@@ -90,7 +90,6 @@ function AdminPage() {
   return (
     <div className="admin-wrapper">
       <a href='/' className='logo'>Meskott</a>
-      <p className='title'>Admin Panel</p>
 
       <div className="admin-content">
         {/* Form */}
@@ -126,11 +125,11 @@ function AdminPage() {
                 <td>{item.ingredients?.join(', ')}</td>
                 <td>{item.price} Birr</td>
                 <td>{item.visible ? 'Yes' : 'No'}</td>
-                <td>
-                  <button onClick={() => toggleVisibility(item._id)}>
+                <td className='actions'>
+                  <button onClick={() => toggleVisibility(item._id)} className='visible'>
                     {item.visible ? 'Hide' : 'Show'}
                   </button>
-                  <button onClick={() => deleteItem(item._id)} style={{ color: 'red' }}>Delete</button>
+                  <button onClick={() => deleteItem(item._id)} className='deleteBtn'>Delete</button>
                 </td>
               </tr>
             ))}

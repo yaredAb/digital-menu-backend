@@ -43,4 +43,24 @@
     display: flex;
     gap: 20px;
     width: 70%;
+    margin-top: 30px;
+  }
+  .actions{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+  .actions button{
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+  }
+  .actions .deteleBtn{
+    background-color: #c70909;
+    color: var(--primary);
+  }
+  .actions .visible{
+    background-color: var(--secondary);
+    color: var(--primary);
   }
