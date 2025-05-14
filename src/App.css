@@ -71,8 +71,7 @@ input:focus{
 }
 .categories button{
   border: none;
-  background-color: var(--btn);
-  color: var(--primary);
+  color: var(--secondary);
   font-size: 16px;
   border-radius: 40%;
   text-transform: capitalize;

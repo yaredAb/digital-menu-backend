@@ -131,7 +131,7 @@ function AdminPage() {
             {menuItems.map(item => (
               <tr key={item._id}>
                 <td>{item.name}</td>
-                <td>{item.ingredients?.join(', ')}</td>
+                <td>{item.ingredients}</td>
                 <td>{item.price} Birr</td>
                 <td>{item.visible ? 'Yes' : 'No'}</td>
                 <td className='actions'>
