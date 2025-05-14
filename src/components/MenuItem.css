@@ -41,7 +41,7 @@
 
 @media (max-width: 768px) {
     .menu-card{
-        max-height: 300px;
+        height: max-content;
     }
     .menu-card img{
         
