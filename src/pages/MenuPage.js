@@ -7,6 +7,7 @@ export default function MenuPage() {
   const [menuItems, setMenuItems] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [searchTerm, setSearchTerm] = useState('')
 
   useEffect(() => {
     fetch('https://digital-menu-1-3i80.onrender.com/api/menu')
@@ -22,8 +23,19 @@ export default function MenuPage() {
         .catch(err =>console.error('failed to fetch category', err))
   }, []);
 
-  const filterMenuItems = selectedCategory ? menuItems.filter(item => item.category === selectedCategory) : menuItems
+  const filterMenuItems = menuItems.filter(item => {
+    const matchesCategory = selectedCategory ? item.category === selectedCategory : true;
+    const matchSearch = item.name.toLowerCase().includes(searchTerm) ||
+      item.name.toLowerCase().includes(searchTerm);
 
+      return item.visible && matchesCategory && matchSearch
+  })
+
+  // const filterMenuItems = selectedCategory ? menuItems.filter(item => item.category === selectedCategory) : menuItems
+
+  const handleSearchChane = (e) => {
+    setSearchTerm(e.target.value.toLowerCase());
+  }
 
 
   return (
@@ -32,7 +44,7 @@ export default function MenuPage() {
       <p className='title'>Menu</p>
       <div className='main-section'>
         <div className='filter-section'>
-          <input type='text' placeholder='search...' />
+          <input type='text' placeholder='search...' value={searchTerm} onChange={handleSearchChane}/>
           <div className='categories'>
             <button onClick={() => setSelectedCategory('')}>All</button>
             {categories.map(category => (
@@ -41,7 +53,7 @@ export default function MenuPage() {
           </div>
         </div>
 
-        {/* <AddMenuItem onItemAdded={(newItem) => setMenuItems(prev => [...prev, newItem])} /> */}
+
         <div className="menu-list">
           {filterMenuItems.map(item => (
             <MenuItem key={item.id} item={item} />
