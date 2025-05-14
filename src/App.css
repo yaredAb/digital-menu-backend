@@ -109,7 +109,7 @@ form input, form select, form textarea {
   .main-section{
     gap: 10px;
     border: none;
-    padding: 5px;
+    padding: 10px;
   }
   .filter-section{
     flex-direction: column;
@@ -123,5 +123,6 @@ form input, form select, form textarea {
   .menu-list{
     display: flex;
     flex-direction: column;
+    padding: 0;
   }
 }
