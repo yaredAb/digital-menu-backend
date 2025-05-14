@@ -109,6 +109,7 @@ form input, form select, form textarea {
   .main-section{
     gap: 10px;
     border: none;
+    padding: 5px;
   }
   .filter-section{
     flex-direction: column;
