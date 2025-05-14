@@ -72,7 +72,7 @@ function AddMenuItem({ onItemAdded }) {
         <form onSubmit={handleSubmit} style={{ margin: '1rem 0' }}>
             <h3>Add Menu Item</h3>
             <input name="name" placeholder="Name" value={form.name} onChange={handleChange} required />
-            <input type="file" accept='image/*' name="image" placeholder="Image URL" onChange={handleImageChange} required />
+            
             <textarea name="description" placeholder="Description" value={form.description} onChange={handleChange} />
             <input name="ingredients" placeholder="Ingredients (comma separated)" value={form.ingredients} onChange={handleChange} />
             <select name="category" value={form.category} onChange={handleChange} required>
