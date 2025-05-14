@@ -65,4 +65,11 @@
     .content-txt{
         z-index: 2;
     }
+    .content-txt h3, .content-txt p{
+        color: var(--primary);
+        font-weight: 600;
+    }
+    .menu-price{
+        z-index: 2;
+    }
 }
