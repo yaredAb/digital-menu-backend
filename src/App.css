@@ -107,14 +107,13 @@ form input, form select, form textarea {
   }
   .main-section{
     gap: 10px;
-    padding: 10px;
     border: none;
   }
   .filter-section{
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    gap: 5px;
+    gap: 10px;
   }
   .filter-section input{
     width: 100%;
