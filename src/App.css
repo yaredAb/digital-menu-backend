@@ -76,6 +76,7 @@ input:focus{
   border-radius: 40%;
   text-transform: capitalize;
   padding: 10px;
+  background-color: var(--primary);
 }
 
 .menu-list{
@@ -83,6 +84,9 @@ input:focus{
   grid-template-columns: repeat(3, 1fr);
   padding: 10px;
   gap: 5px;
+  height: 60vh;
+  background-color: var(--secondary);
+  overflow-y: auto;
 }
 form {
   display: flex;
