@@ -8,6 +8,7 @@ function MenuItem({ item }) {
   return (
     <a href="/" className="menu-card">                              
         <img src={item.image} alt={item.name} />
+        <div className='overlay'></div>
             
         <div className="content-txt">
             <h3>{ item.name }</h3>
