@@ -36,7 +36,6 @@ function AdminPage() {
 
   const handleImageChange = (e) => {
     setImageFile(e.target.files[0])
-    console.log('Selected file:', e.target.files[0]);
   }
 
   const handleSubmit = async (e) => {
@@ -51,11 +50,7 @@ function AdminPage() {
 
     if(imageFile) {
         payload.append('image', imageFile)
-    }
-
-    for (let pair of payload.entries()) {
-      console.log(pair[0] + ':', pair[1]);
-    }    
+    }  
 
 
     try {
