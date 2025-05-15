@@ -23,7 +23,6 @@
   }
   
   .admin-table {
-    width: 100%;
     margin-top: 2rem;
     border-collapse: collapse;
     width: 60%
@@ -67,4 +66,18 @@
   .actions .editBtn{
     background-color: var(--btn);
     color: var(--primary);
+  }
+
+
+  @media (max-width: 768px) {
+    .admin-content{
+      flex-direction: column;
+      width: 100%;
+    }
+    .admin-form{
+      width: 100%;
+    }
+    .admin-table{
+      width: 100%;
+    }
   }
