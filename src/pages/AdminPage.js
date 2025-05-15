@@ -67,8 +67,9 @@ function AdminPage() {
 
     try {
       const url = editingItemId 
-        ? 'https://digital-menu-1-3i80.onrender.com/api/menu/${editingItemId}' 
+        ? `https://digital-menu-1-3i80.onrender.com/api/menu/${editingItemId}` 
         : 'https://digital-menu-1-3i80.onrender.com/api/menu';
+
       const method = editingItemId ? 'PUT' : 'POST'
       
       
