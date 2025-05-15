@@ -32,7 +32,7 @@ export default function MenuPage() {
     }
 
     fetchData();
-  })
+  }, [])
 
   const filterMenuItems = menuItems.filter(item => {
     const matchesCategory = selectedCategory ? item.category === selectedCategory : true;
