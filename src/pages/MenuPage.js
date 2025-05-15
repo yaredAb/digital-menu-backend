@@ -8,6 +8,7 @@ export default function MenuPage() {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('');
   const [searchTerm, setSearchTerm] = useState('')
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     fetch('https://digital-menu-1-3i80.onrender.com/api/menu')
@@ -22,6 +23,30 @@ export default function MenuPage() {
         .then(data => setCategories(data))
         .catch(err =>console.error('failed to fetch category', err))
   }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try{
+        setLoading(true)
+        const [menuRes, categoryRes] = await Promise.all([
+          fetch['https://digital-menu-1-3i80.onrender.com/api/menu'],
+          fetch('https://digital-menu-1-3i80.onrender.com/api/category')
+        ]);
+
+        const menuData = await menuRes.json();
+        const categoryData = await categoryRes.json();
+
+        setMenuItems(menuData)
+        setCategories(categoryData)
+      } catch (err) {
+        console.error('Fetch error: ', err)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchData();
+  })
 
   const filterMenuItems = menuItems.filter(item => {
     const matchesCategory = selectedCategory ? item.category === selectedCategory : true;
@@ -52,13 +77,20 @@ export default function MenuPage() {
             ))}
           </div>
         </div>
-
-
-        <div className="menu-list">
-          {filterMenuItems.map(item => (
-            <MenuItem key={item.id} item={item} />
-          ))}
-        </div>
+          
+          { loading ? (
+            <div className="loading-container">
+              <div className="spinner"></div>
+              <p>Loading menu...</p>
+            </div>
+          ) : (
+            <div className="menu-list">
+              {filterMenuItems.map(item => (
+              <MenuItem key={item.id} item={item} />
+              ))}
+            </div>
+          )            
+          }
       </div>
     </div>
   )
