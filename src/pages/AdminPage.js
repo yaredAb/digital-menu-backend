@@ -91,6 +91,7 @@ function AdminPage() {
           price: ''
         });
         setImageFile(null)
+        setEditingItemId(null)
       } else {
         alert(`Failed: ${result.message}`);
       }
