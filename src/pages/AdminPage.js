@@ -154,7 +154,7 @@ function AdminPage() {
                 <td>{item.price} Birr</td>
                 <td>{item.visible ? 'Yes' : 'No'}</td>
                 <td className='actions'>
-                <button className='editBtn' onClick={(item) => handleEdit(item)}>Edit</button>
+                <button className='editBtn' onClick={() => handleEdit(item)}>Edit</button>
                   <button onClick={() => toggleVisibility(item._id)} className='visible'>
                     {item.visible ? 'Hide' : 'Show'}
                   </button>
