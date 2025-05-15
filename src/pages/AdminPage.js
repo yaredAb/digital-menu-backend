@@ -42,8 +42,8 @@ function AdminPage() {
   const handleEdit = (item) => {
     setForm({
       name: item.name,
-      description: item.description,
-      ingredients: item.ingredients,
+      description: item.description || '',
+      ingredients: item.ingredients || '',
       category: item.category,
       price: item.price
     })
