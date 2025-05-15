@@ -138,34 +138,36 @@ function AdminPage() {
           <button type="submit">{editingItemId ? 'Update Item' : 'Add Item'}</button>
         </form>
         {/* Table */}
-        <table className="admin-table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Ingredients</th>
-              <th>Price</th>
-              <th>Visible</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {menuItems.map(item => (
-              <tr key={item._id}>
-                <td>{item.name}</td>
-                <td>{item.ingredients}</td>
-                <td>{item.price} Birr</td>
-                <td>{item.visible ? 'Yes' : 'No'}</td>
-                <td className='actions'>
-                <button className='editBtn' onClick={() => handleEdit(item)}>Edit</button>
-                  <button onClick={() => toggleVisibility(item._id)} className='visible'>
-                    {item.visible ? 'Hide' : 'Show'}
-                  </button>
-                  <button onClick={() => deleteItem(item._id)} className='deleteBtn'>Delete</button>
-                </td>
+        <div className='table-container'>
+          <table className="admin-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Ingredients</th>
+                <th>Price</th>
+                <th>Visible</th>
+                <th>Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {menuItems.map(item => (
+                <tr key={item._id}>
+                  <td>{item.name}</td>
+                  <td>{item.ingredients}</td>
+                  <td>{item.price} Birr</td>
+                  <td>{item.visible ? 'Yes' : 'No'}</td>
+                  <td className='actions'>
+                  <button className='editBtn' onClick={() => handleEdit(item)}>Edit</button>
+                    <button onClick={() => toggleVisibility(item._id)} className='visible'>
+                      {item.visible ? 'Hide' : 'Show'}
+                    </button>
+                    <button onClick={() => deleteItem(item._id)} className='deleteBtn'>Delete</button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
