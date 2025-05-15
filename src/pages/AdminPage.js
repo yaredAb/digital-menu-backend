@@ -13,6 +13,7 @@ function AdminPage() {
   const [categories, setCategories] = useState([]);
   const [menuItems, setMenuItems] = useState([]);
   const [imageFile, setImageFile] = useState(null)
+  const [editingItemId, setEditingItemId] = useState(null)
 
   useEffect(() => {
     fetchData();
@@ -38,6 +39,17 @@ function AdminPage() {
     setImageFile(e.target.files[0])
   }
 
+  const handleEdit = (item) => {
+    setForm({
+      name: item.name,
+      description: item.description,
+      ingredients: item.ingredients,
+      category: item.category,
+      price: item.price
+    })
+    setEditingItemId(item._id)
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -54,8 +66,15 @@ function AdminPage() {
 
 
     try {
-      const res = await fetch('https://digital-menu-1-3i80.onrender.com/api/menu', {
-        method: 'POST',
+      const url = editingItemId 
+        ? 'https://digital-menu-1-3i80.onrender.com/api/menu/${editingItemId}' 
+        : 'https://digital-menu-1-3i80.onrender.com/api/menu';
+      const method = editingItemId ? 'PUT' : 'POST'
+      
+      
+
+      const res = await fetch(url, {
+        method,
         body: payload
       });
 
@@ -114,7 +133,7 @@ function AdminPage() {
             ))}
           </select>
           <input name="price" placeholder="Price" type="number" value={form.price} onChange={handleChange} required />
-          <button type="submit">Add Item</button>
+          <button type="submit">{editingItemId ? 'Update Item' : 'Add Item'}</button>
         </form>
         {/* Table */}
         <table className="admin-table">
@@ -135,6 +154,7 @@ function AdminPage() {
                 <td>{item.price} Birr</td>
                 <td>{item.visible ? 'Yes' : 'No'}</td>
                 <td className='actions'>
+                <button className='editBtn' onClick={(item) => handleEdit(item)}>Edit</button>
                   <button onClick={() => toggleVisibility(item._id)} className='visible'>
                     {item.visible ? 'Hide' : 'Show'}
                   </button>
