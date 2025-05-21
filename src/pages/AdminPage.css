@@ -71,7 +71,7 @@
     color: var(--primary);
   }
 
-  input, button, textarea{
+  .admin-wrapper input, .admin-wrapper button, .admin-wrapper textarea{
     border: 1px solid #333;
   }
 
