@@ -74,7 +74,7 @@ export default function MenuPage() {
               <p>Loading menu...</p>
             </div>
           ) : (
-          <div class="h-full overflow-y-auto">
+          <div class="h-full overflow-y-auto py-1">
             <div class="grid grid-cols-2 gap-2">
               {filterMenuItems.map(item => (
               <MenuItem key={item.id} item={item} />
