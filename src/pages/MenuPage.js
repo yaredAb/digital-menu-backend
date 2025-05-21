@@ -59,9 +59,9 @@ export default function MenuPage() {
         </div>
         <div class="border border-gray-400 flex items-center rounded-full py-1 px-2">
             <img src="img/search_dark.png" alt="" />
-            <input type="search" name="search" class="w-full p-1 focus:outline-none text-lg " placeholder="Search..." />
+            <input type="search" name="search" class="w-full p-1 focus:outline-none text-lg " placeholder="Search..." value={searchTerm} onChange={handleSearchChane}/>
         </div>
-        <div className='categories'>
+        <div className='flex overflow-x-auto gap-2 h-12'>
           <button onClick={() => setSelectedCategory('')} className="border-2 border-black px-5 rounded-full text-lg">All</button>
           {categories.map(category => (
             <button key={category.id} onClick={() => setSelectedCategory(category.name)} className="bg-slate-200 px-5 rounded-full text-lg">{category.name}</button>
