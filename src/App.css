@@ -109,25 +109,6 @@ form input, form select, form textarea {
   font-size: 1rem;
 }
 
-
-.loading-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
-}
-
-.spinner {
-  border: 5px solid #eee;
-  border-top: 5px solid #333;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: spin 1s linear infinite;
-  margin-bottom: 1rem;
-}
-
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -160,3 +141,4 @@ form input, form select, form textarea {
     grid-template-columns: repeat(2, 1fr);
   }
 } */
+
