@@ -11,7 +11,7 @@ function MenuItem({ item }) {
         <div className='overlay'></div>
             
         <div className="content-txt">
-            <h3>{ item.name }</h3>
+            <h3 className='text-3xl text-red-500'>{ item.name }</h3>
             <p>{ item.ingredients }</p>            
         </div>
         <span className="menu-price">{ item.price } Birr</span>

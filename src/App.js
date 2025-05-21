@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import MenuPage from './pages/MenuPage';
 import AdminPage from './pages/AdminPage';
-import './App.css';
+import './index.css';
+
 import QRCodePage from './pages/QRCodePage';
 
 function App() {
