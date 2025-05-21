@@ -119,7 +119,12 @@ function AdminPage() {
 
   return (
     <div className="admin-wrapper">
-      <a href='/' className='logo'>Meskott</a>
+      <div class="flex items-center gap-3">
+            <div class="bg-black rounded-full p-2">
+                <img src="/img/rest.png" alt="logo" class="w-16" />
+            </div>
+            <a href="#" class="text-4xl font-semibold">Menu</a>
+        </div>
 
       <div className="admin-content">
         {/* Form */}

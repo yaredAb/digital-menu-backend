@@ -71,7 +71,7 @@
     color: var(--primary);
   }
 
-  input, button{
+  input, button, textarea{
     border: 1px solid #333;
   }
 
