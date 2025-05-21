@@ -62,9 +62,9 @@ export default function MenuPage() {
             <input type="search" name="search" class="w-full p-1 focus:outline-none text-lg " placeholder="Search..." value={searchTerm} onChange={handleSearchChane}/>
         </div>
         <div className='flex overflow-x-auto gap-2 h-12'>
-          <button onClick={() => setSelectedCategory('')} className={`${selectedCategory === '' ? 'border-2 border-black' : ''} px-5 rounded-full text-lg`}>All</button>
+          <button onClick={() => setSelectedCategory('')} className={`${selectedCategory === '' ? 'border-2 border-black' : 'bg-slate-200'} px-5 rounded-full text-lg`}>All</button>
           {categories.map(category => (
-            <button key={category.id} onClick={() => setSelectedCategory(category.name)} className={`${selectedCategory === category.name ? 'border-2 border-black' : ''}bg-slate-200 px-5 rounded-full text-lg`}>{category.name}</button>
+            <button key={category.id} onClick={() => setSelectedCategory(category.name)} className={`${selectedCategory === category.name ? 'border-2 border-black' : 'bg-slate-200'} px-5 rounded-full text-lg`}>{category.name}</button>
           ))}
         </div>
           
