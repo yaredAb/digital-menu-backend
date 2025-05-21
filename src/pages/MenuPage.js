@@ -51,7 +51,7 @@ export default function MenuPage() {
 
   return (
     <div className="page-wrapper">
-      <a className="logo text-3xl font-bold">Meskott</a>
+      <a className="logo text-5xl font-bold">Meskott</a>
       <p className='title'>Menu</p>
       <div className='main-section'>
         <div className='filter-section'>
