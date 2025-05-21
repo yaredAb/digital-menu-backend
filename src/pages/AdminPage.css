@@ -71,6 +71,10 @@
     color: var(--primary);
   }
 
+  input, button{
+    border: 1px solid #333;
+  }
+
 
   @media (max-width: 768px) {
     .admin-content{
