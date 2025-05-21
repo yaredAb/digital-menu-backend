@@ -57,14 +57,15 @@ export default function MenuPage() {
             </div>
             <a href="#" class="text-4xl font-semibold">Menu</a>
         </div>
-        <div className='filter-section'>
-          <input type='text' placeholder='search...' value={searchTerm} onChange={handleSearchChane}/>
-          <div className='categories'>
-            <button onClick={() => setSelectedCategory('')}>All</button>
-            {categories.map(category => (
-              <button key={category.id} onClick={() => setSelectedCategory(category.name)}>{category.name}</button>
-            ))}
-          </div>
+        <div class="border border-gray-400 flex items-center rounded-full py-1 px-2">
+            <img src="./search_dark.png" alt="" />
+            <input type="search" name="search" class="w-full p-1 focus:outline-none text-lg " placeholder="Search..." />
+        </div>
+        <div className='categories'>
+          <button onClick={() => setSelectedCategory('')} class="border-2 border-black px-5 rounded-full text-lg">All</button>
+          {categories.map(category => (
+            <button key={category.id} onClick={() => setSelectedCategory(category.name)} className='class="bg-slate-200 px-5 rounded-full text-lg"'>{category.name}</button>
+          ))}
         </div>
           
           { loading ? (
