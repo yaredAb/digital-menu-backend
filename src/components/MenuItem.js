@@ -10,7 +10,7 @@ function MenuItem({ item }) {
         <img src={item.image} alt={item.name} />
         <div className='overlay'></div>
             
-        <div className="content-txt">
+        <div className="content-txt ">
             <h3 className='text-3xl text-red-500'>{ item.name }</h3>
             <p>{ item.ingredients }</p>            
         </div>
