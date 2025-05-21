@@ -10,8 +10,8 @@ function MenuItem({ item }) {
         <img src={item.image} alt={item.name} className='h-44 w-full object-cover bg-slate-200' />
             
         <div className="p-2">
-            <h3 className='text-2xl font-medium'>{ item.name }</h3>
-            <p className='text-lg font-medium'>{ item.price }</p>            
+            <p className='text-xl font-medium'>{ item.name }</p>
+            <p className='text-lg font-medium'>{ item.price } Birr</p>            
         </div>
     </a>
   );
