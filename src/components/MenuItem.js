@@ -6,15 +6,13 @@ function MenuItem({ item }) {
   if (!item.visible) return null;
 
   return (
-    <a href="/" className="menu-card">                              
-        <img src={item.image} alt={item.name} />
-        <div className='overlay'></div>
+    <a href="/" className="shadow-2xl overflow-hidden rounded-lg border border-gray-500 h-68">                              
+        <img src={item.image} alt={item.name} className='h-44 w-full object-cover bg-slate-200' />
             
-        <div className="content-txt ">
-            <h3 className='text-3xl text-red-500'>{ item.name }</h3>
-            <p>{ item.ingredients }</p>            
+        <div className="p-2">
+            <h3 className='text-2xl font-medium'>{ item.name }</h3>
+            <p className='text-lg font-medium'>{ item.price }</p>            
         </div>
-        <span className="menu-price">{ item.price } Birr</span>
     </a>
   );
 }

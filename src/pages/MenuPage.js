@@ -58,13 +58,13 @@ export default function MenuPage() {
             <a href="#" class="text-4xl font-semibold">Menu</a>
         </div>
         <div class="border border-gray-400 flex items-center rounded-full py-1 px-2">
-            <img src="./search_dark.png" alt="" />
+            <img src="img/search_dark.png" alt="" />
             <input type="search" name="search" class="w-full p-1 focus:outline-none text-lg " placeholder="Search..." />
         </div>
         <div className='categories'>
-          <button onClick={() => setSelectedCategory('')} class="border-2 border-black px-5 rounded-full text-lg">All</button>
+          <button onClick={() => setSelectedCategory('')} className="border-2 border-black px-5 rounded-full text-lg">All</button>
           {categories.map(category => (
-            <button key={category.id} onClick={() => setSelectedCategory(category.name)} className='class="bg-slate-200 px-5 rounded-full text-lg"'>{category.name}</button>
+            <button key={category.id} onClick={() => setSelectedCategory(category.name)} className="bg-slate-200 px-5 rounded-full text-lg">{category.name}</button>
           ))}
         </div>
           
@@ -74,11 +74,13 @@ export default function MenuPage() {
               <p>Loading menu...</p>
             </div>
           ) : (
-            <div className="menu-list">
+          <div class="h-full overflow-y-auto">
+            <div class="grid grid-cols-2 gap-2">
               {filterMenuItems.map(item => (
               <MenuItem key={item.id} item={item} />
               ))}
             </div>
+          </div>
           )            
           }
       </div>
